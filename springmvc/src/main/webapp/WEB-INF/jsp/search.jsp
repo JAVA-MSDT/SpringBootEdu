@@ -18,10 +18,10 @@
 				</div>
 				<!-- branding -->
 				<ul class="navbar">
-                                <li><a href="#">home</a></li>
-                                <li><a href="#">login</a></li>
-                                <li><a href="#">search</a></li>
-                                <li><a href="#">linkedin</a></li>
+                <li><a href="/home">home</a></li>
+                <li><a href="/loginPage">login</a></li>
+                <li><a href="/searchPage">search</a></li>
+                <li><a href="redirect">linkedin</a></li>
                             </ul><!-- navbar -->
 				<!-- navbar -->
 			</div>
@@ -42,6 +42,9 @@
 		</div>
 	</section>
 	<!-- guarantee -->
+	<c:if test="${empty(products)}">
+	<h2> Products Empty </h2>
+	</c:if>
         <c:if test="${!empty(products)}">
     		<section id="products" class="section">
             <c:forEach var="product" items="${products}">

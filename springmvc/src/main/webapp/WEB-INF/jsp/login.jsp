@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
 <link rel="stylesheet" href="css/style.css">
@@ -15,9 +16,10 @@
 				</div>
 				<!-- branding -->
 				<ul class="navbar">
-					<li><a href="#">home</a></li>
-					<li><a href="#">search</a></li>
-					<li><a href="#">linkedIn</a></li>
+                <li><a href="/home">home</a></li>
+                <li><a href="/loginPage">login</a></li>
+                <li><a href="/searchPage">search</a></li>
+                <li><a href="redirect">linkedin</a></li>
 				</ul>
 				<!-- navbar -->
 			</div>
@@ -29,16 +31,16 @@
   </div>container tagline -->
 	</header>
 	<!-- #home -->
-
+    <span class="success">${dataSaved}</span>
    	<section id="login" class="section">
 		<div class="container tagline">
 			<em>LOGIN USER</em>
-			<form action="#" method="post" >
-				<label>Username</label> <input type="text" name="username"/><br />
-			    <label>Password</label> <input type="password" name="password"/><br />
+			<form:form action="#" method="post" >
+				<label>Username</label> <form:input type="text" path="username"/><br />
+			    <label>Password</label> <form:input type="password" path="password"/><br />
 			     <input type="submit" value="Login">
-			</form>
-			 <a class="card-title" href="#">Register new user? Click here</a>
+			</form:form>
+			 <a class="card-title" href="/registerPage">Register new user? Click here</a>
 		</div>
 	</section>
 	<!-- #products -->

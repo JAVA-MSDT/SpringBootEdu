@@ -1,7 +1,12 @@
 package com.msdt.springmvc.controller;
 
+import java.util.Arrays;
+import java.util.List;
+
+import com.msdt.springmvc.entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 @Controller
 public class HomeController {
@@ -28,5 +33,21 @@ public class HomeController {
     public String goToLogin() {
         System.out.println("Login Page");
         return "login";
+    }
+
+    @GetMapping("/registerPage")
+    public String goToRegister() {
+        System.out.println("Register Page");
+        return "register";
+    }
+
+    @ModelAttribute("newuser")
+    public User defaultUser() {
+        return new User();
+    }
+
+    @ModelAttribute("genderItems")
+    public List<String> defaultGender() {
+        return Arrays.asList("Male", "Female", "Other");
     }
 }
