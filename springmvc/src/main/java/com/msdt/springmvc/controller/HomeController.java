@@ -3,6 +3,7 @@ package com.msdt.springmvc.controller;
 import java.util.Arrays;
 import java.util.List;
 
+import com.msdt.springmvc.entity.Login;
 import com.msdt.springmvc.entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -41,13 +42,4 @@ public class HomeController {
         return "register";
     }
 
-    @ModelAttribute("newuser")
-    public User defaultUser() {
-        return new User();
-    }
-
-    @ModelAttribute("genderItems")
-    public List<String> defaultGender() {
-        return Arrays.asList("Male", "Female", "Other");
-    }
 }

@@ -38,14 +38,12 @@ public class RegistrationController {
         System.out.println(user.getDateOfBirth());
         if (bindingResult.hasErrors()) {
             modelAndView.setViewName("register");
-            modelAndView.addObject("genderItems", Arrays.asList("Male", "Female", "Other"));
             return modelAndView;
         }
 
         User userRegistered = userService.saveUser(user);
         modelAndView.setViewName("login");
         modelAndView.addObject("dataSaved", "User Registered Successfully");
-        modelAndView.addObject("username", userRegistered.getUsername());
         return modelAndView;
     }
 }

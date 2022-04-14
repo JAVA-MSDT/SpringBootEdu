@@ -16,7 +16,7 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public List<User> getUserByLoginCred(String username, String password) {
+    public User getUserByLoginCred(String username, String password) {
         return  userRepository.getUserByLoginCred(username, password);
     }
 

@@ -7,7 +7,7 @@ CREATE TABLE PRODUCT(
 
 CREATE TABLE USER (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(50) DEFAULT NULL,
+  `username` varchar(50) DEFAULT NULL UNIQUE,
   `password` varchar(50) DEFAULT NULL,
   `first_name` varchar(50) DEFAULT NULL,
   `last_name` varchar(50) DEFAULT NULL,
