@@ -1,8 +1,11 @@
 package com.msdt.springmvc.controller;
 
+import javax.validation.Valid;
+
 import com.msdt.springmvc.entity.User;
 import com.msdt.springmvc.service.UserService;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -17,10 +20,14 @@ public class RegistrationController {
     }
 
     @PostMapping("/registeruser")
-    public ModelAndView registerUser(@ModelAttribute("newuser") User user, ModelAndView modelAndView) {
-        System.out.println("User:: " + user);
+    public ModelAndView registerUser(@Valid @ModelAttribute("newuser") User user, BindingResult bindingResult, ModelAndView modelAndView) {
+
+        if(bindingResult.hasErrors()) {
+            modelAndView.setViewName("register");
+            return modelAndView;
+        }
+
         User userRegistered = userService.saveUser(user);
-        System.out.println("userRegistered:: " + userRegistered);
         modelAndView.setViewName("login");
         modelAndView.addObject("dataSaved", "User Registered Successfully");
         modelAndView.addObject("username", userRegistered.getUsername());
