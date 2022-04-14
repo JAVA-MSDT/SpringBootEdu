@@ -23,16 +23,16 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Size(min = 6, message = "User name should be minimum 6 characters long")
+    @Size(min = 6, message = "{username.not.empty}")
     private String username;
 
-    @Pattern(regexp = "((?=.*[A-Z]).{6,10})", message = " Password must have one upercase and should be between 6 - 10 characters" )
+    @Pattern(regexp = "((?=.*[A-Z]).{6,10})", message = "{password.pattern}" )
     private String password;
     private String firstName;
     private String lastName;
     private String dateOfBirth;
 
-    @NotNull(message = "Activity Cannot be empty")
+    @NotNull(message = "{activity.not.empty}")
     private String activity;
     private String gender;
 
