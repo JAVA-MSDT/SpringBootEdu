@@ -8,8 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
+@SessionAttributes("login")
 public class LoginController {
 
     private final UserService userService;
@@ -25,6 +27,6 @@ public class LoginController {
             throw new AppException("User not Found");
         }
         System.out.println(user);
-        return "search";
+        return "forward:/userprofile";
     }
 }

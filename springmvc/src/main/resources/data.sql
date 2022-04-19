@@ -1,3 +1,5 @@
+INSERT INTO USER (username, password, first_name, last_name, date_of_birth, activity, gender) VALUES ('admin','Admin1', 'Ahmed', 'Samy', '1985-01-25', 'Gym', 'MALE');
+
 INSERT INTO product (name, image_path) VALUES ('mineralwater-blueberry','images/mineralwater-blueberry.jpg');
 INSERT INTO product (name, image_path) VALUES ('mineralwater-lemonlime','images/mineralwater-lemonlime.jpg');
 INSERT INTO product (name, image_path) VALUES ('mineralwater-orange','images/mineralwater-orange.jpg');
