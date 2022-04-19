@@ -18,4 +18,8 @@ public class ProductService {
     public List<Product> searchByName(String name) {
         return productRepository.findProductsByName(name);
     }
+
+    public List<Product> getProducts() {
+        return productRepository.findAll();
+    }
 }

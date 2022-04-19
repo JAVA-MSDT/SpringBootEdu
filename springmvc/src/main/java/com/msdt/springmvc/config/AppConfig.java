@@ -78,7 +78,6 @@ public class AppConfig extends WebMvcConfigurationSupport {
 
     @Bean
     public LocaleResolver localeResolver() {
-        System.out.println("LocaleResolver");
         CookieLocaleResolver localeResolver = new CookieLocaleResolver();
         localeResolver.setDefaultLocale(Locale.US);
         localeResolver.setCookieName("local");
